@@ -34,7 +34,7 @@ module "example" {
 | `alias`     | The alternate domain name for the distribution.                                                | yes          |  |
 | `origin_id`              | A unique identifier for the origin.                                                        | yes          |  |
 | `acm_certificate_arn`              | The ARN for the ACM cert to use in this distribution.                                                        | yes          |  |
-| `origin_protocol_policy` | Policy to use to contact the origin. Must be `http_only`, `https_only`, or `match_viewer`  | no           | `https_only`   |
+| `origin_protocol_policy` | Policy to use to contact the origin. Must be `http_only`, `https_only`, or `match_viewer`  | no           | `https-only`   |
 | `origin_path`            | The folder on the origin to request content from. Must begin with `/` with no tailing `/`.  | no           |    |
 | `origin_http_port`            | The port on the origin host CloudFront will make HTTP requests to.  | no           |    `80` |
 | `origin_https_port`            | The port on the origin host CloudFront will make HTTPS requests to.  | no           |    `443` |

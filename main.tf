@@ -18,7 +18,7 @@ variable "minimum_protocol_version" {
 }
 
 variable "origin_protocol_policy" {
-  default = "https_only"
+  default = "https-only"
 }
 
 variable "origin_path" {
