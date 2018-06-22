@@ -1,7 +1,13 @@
-# partinfra-terraform-cloudfrontssl
+# tf-cloudfrontssl
+
 ## Introduction
+
 A Terraform module to easily create an SSL-enabled CloudFront distribution for a custom domain.
+
 ### Get Involved
+
+This is a fork from the Mozilla module. To participate in the upstream community, visit:
+
 * [Community Ops Wiki Page](https://wiki.mozilla.org/Community_Ops)
 * Communication:
   *  IRC: ``#communityit`` on irc.mozilla.org
@@ -28,6 +34,7 @@ module "example" {
 | `alias`     | The alternate domain name for the distribution.                                                | yes          |  |
 | `origin_id`              | A unique identifier for the origin.                                                        | yes          |  |
 | `acm_certificate_arn`              | The ARN for the ACM cert to use in this distribution.                                                        | yes          |  |
+| `origin_protocol_policy` | Policy to use to contact the origin. Must be `http_only`, `https_only`, or `match_viewer`  | no           | `https_only`   |
 | `origin_path`            | The folder on the origin to request content from. Must begin with `/` with no tailing `/`.  | no           |    |
 | `origin_http_port`            | The port on the origin host CloudFront will make HTTP requests to.  | no           |    `80` |
 | `origin_https_port`            | The port on the origin host CloudFront will make HTTPS requests to.  | no           |    `443` |
@@ -35,8 +42,5 @@ module "example" {
 | `comment`           | A comment to add to the distribution.  | no           |    |
 | `default_root_object`           | The object to return when a user requests the root URL.  | no           |  `index.html`  |
 | `compression` | Enable CloudFront to compress some files with gzip (and forward the `Accept-Encoding` header to the origin) | no | `false`
-## Issues
 
-For issue tracking we use bugzilla.mozilla.org. [Create a bug][1] on bugzilla.mozilla.org under ``Participation Infrastructure > Community Ops`` component.
 
-[1]: https://bugzilla.mozilla.org/enter_bug.cgi?product=Participation%20Infrastructure&component=Community%20Ops
