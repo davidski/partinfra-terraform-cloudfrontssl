@@ -1,5 +1,7 @@
 # tf-cloudfrontssl
 
+This repository is archived and is no longer maintained.
+
 ## Introduction
 
 A Terraform module to easily create an SSL-enabled CloudFront distribution for a custom domain.
